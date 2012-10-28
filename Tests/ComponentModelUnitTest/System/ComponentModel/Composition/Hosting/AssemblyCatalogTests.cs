@@ -272,12 +272,12 @@ namespace System.ComponentModel.Composition
         {
             var catalog = new AssemblyCatalog(typeof(AssemblyCatalogTests).Assembly);
             Expression<Func<ExportDefinition, bool>> constraint = (ExportDefinition exportDefinition) => exportDefinition.ContractName == AttributedModelServices.GetContractName(typeof(MyExport));
-            IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> matchingExports = catalog.GetExports(constraint);
+            IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> matchingExports = catalog.GetExports(constraint);
             Assert.IsNotNull(matchingExports);
             Assert.IsTrue(matchingExports.Count() >= 0);
 
-            IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> expectedMatchingExports = catalog.Parts
-                .SelectMany(part => part.ExportDefinitions, (part, export) => new Tuple<ComposablePartDefinition, ExportDefinition>(part, export))
+            IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> expectedMatchingExports = catalog.Parts
+                .SelectMany(part => part.ExportDefinitions, (part, export) => new Tuple2<ComposablePartDefinition, ExportDefinition>(part, export))
                 .Where(partAndExport => partAndExport.Item2.ContractName == AttributedModelServices.GetContractName(typeof(MyExport)));
             Assert.IsTrue(matchingExports.SequenceEqual(expectedMatchingExports));
         }

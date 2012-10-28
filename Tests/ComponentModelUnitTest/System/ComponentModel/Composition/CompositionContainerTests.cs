@@ -2908,13 +2908,13 @@ namespace System.ComponentModel.Composition
         [TestMethod]
         public void ComposeExportedValueOfT_ValidContractName_ValidExportedValue_VerifyCanPullOnValue()
         {
-            var expectations = new List<Tuple<string, string>>();
-            expectations.Add(new Tuple<string, string>(" ", (string)null));
-            expectations.Add(new Tuple<string, string>(" ", String.Empty));
-            expectations.Add(new Tuple<string, string>(" ", "Value"));
-            expectations.Add(new Tuple<string, string>("ContractName", (string)null));
-            expectations.Add(new Tuple<string, string>("ContractName", String.Empty));
-            expectations.Add(new Tuple<string, string>("ContractName", "Value"));
+            var expectations = new List<Tuple2<string, string>>();
+            expectations.Add(new Tuple2<string, string>(" ", (string)null));
+            expectations.Add(new Tuple2<string, string>(" ", String.Empty));
+            expectations.Add(new Tuple2<string, string>(" ", "Value"));
+            expectations.Add(new Tuple2<string, string>("ContractName", (string)null));
+            expectations.Add(new Tuple2<string, string>("ContractName", String.Empty));
+            expectations.Add(new Tuple2<string, string>("ContractName", "Value"));
 
             foreach (var expectation in expectations)
             {

@@ -128,7 +128,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///     <see cref="ExportDefinition"/> objects to return.
         /// </param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple{T1, T2}"/> containing the 
+        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple2{T1, T2}"/> containing the 
         ///     <see cref="ExportDefinition"/> objects and their associated 
         ///     <see cref="ComposablePartDefinition"/> for objects that match the constraint defined 
         ///     by <paramref name="definition"/>.
@@ -139,14 +139,14 @@ namespace System.ComponentModel.Composition.Hosting
         /// <exception cref="ObjectDisposedException">
         ///     The <see cref="AggregateCatalog"/> has been disposed of.
         /// </exception>
-        public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             this.ThrowIfDisposed();
 
             Requires.NotNull(definition, "definition");
 
             // delegate the query to each catalog and merge the results.
-            var exports = new List<Tuple<ComposablePartDefinition, ExportDefinition>>();
+            var exports = new List<Tuple2<ComposablePartDefinition, ExportDefinition>>();
             foreach (var catalog in this._catalogs)
             {
                 foreach (var export in catalog.GetExports(definition))

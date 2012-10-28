@@ -146,7 +146,7 @@ namespace System.ComponentModel.Composition
             return (e) => exportFactoryFactory.Invoke(e, constructor);
         }
 
-        private static Tuple<T, Action> GetExportLifetimeContextFromExport<T>(Export export)
+        private static Tuple2<T, Action> GetExportLifetimeContextFromExport<T>(Export export)
         {
             T exportedValue;
             Action disposeAction;
@@ -181,18 +181,18 @@ namespace System.ComponentModel.Composition
                 disposeAction = () => { };
             }
 
-            return new Tuple<T, Action>(exportedValue, disposeAction);
+            return new Tuple2<T, Action>(exportedValue, disposeAction);
         }
 
         private static object CreateStronglyTypedExportFactoryOfT<T>(Export export, ConstructorInfo constructor)
         {
-            Func<Tuple<T, Action>> exportLifetimeContextCreator = () => ExportServices.GetExportLifetimeContextFromExport<T>(export);
+            Func<Tuple2<T, Action>> exportLifetimeContextCreator = () => ExportServices.GetExportLifetimeContextFromExport<T>(export);
             return constructor.Invoke(new object[] { exportLifetimeContextCreator });
         }
 
         private static object CreateStronglyTypedExportFactoryOfTM<T, M>(Export export, ConstructorInfo constructor)
         {
-            Func<Tuple<T, Action>> exportLifetimeContextCreator = () => ExportServices.GetExportLifetimeContextFromExport<T>(export);
+            Func<Tuple2<T, Action>> exportLifetimeContextCreator = () => ExportServices.GetExportLifetimeContextFromExport<T>(export);
             return constructor.Invoke(new object[] { exportLifetimeContextCreator, AttributedModelServices.GetMetadataView<M>(export.Metadata) });
         }
 

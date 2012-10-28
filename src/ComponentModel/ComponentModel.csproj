@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CodeAnalysisRuleSet>Migrated rules for ComponentModel.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
+    <DocumentationFile>..\..\bin\System.ComponentModel.Composition.NET35.xml</DocumentationFile>
   </PropertyGroup>
-    <PropertyGroup>
+  <PropertyGroup>
     <OutputPath>..\..\bin</OutputPath>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <NoWarn>1570;1572;1573;1591;1699</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ProductVersion>10.0.20729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</ProjectGuid>
-    <ProjectClrTypes>FULLCLR;SILVERLIGHT</ProjectClrTypes>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Microsoft.Internal</RootNamespace>
-    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
-    <DocumentationFile>$(OutputPath)\System.ComponentModel.Composition.xml</DocumentationFile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,9 +27,20 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProductVersion>10.0.20729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</ProjectGuid>
+    <ProjectClrTypes>FULLCLR;SILVERLIGHT</ProjectClrTypes>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Internal</RootNamespace>
+    <AssemblyName>System.ComponentModel.Composition.NET35</AssemblyName>
+    <DocumentationFile>$(OutputPath)\System.ComponentModel.Composition.NET35.xml</DocumentationFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -43,11 +51,6 @@
     <CreateRefAssembly>true</CreateRefAssembly>
     <PublishMetaAssemblyToSDK>true</PublishMetaAssemblyToSDK>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Microsoft\Internal\Assumes.cs" />
@@ -232,6 +235,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
 </Project>

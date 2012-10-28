@@ -40,7 +40,7 @@ namespace System.ComponentModel.Composition.Hosting
                 }
             }
 
-            public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(
+            public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(
                 ImportDefinition definition)
             {
                 Requires.NotNull(definition, "definition");
@@ -49,14 +49,14 @@ namespace System.ComponentModel.Composition.Hosting
                 var trimmedExports = originalExports.Where(partAndExport =>
                     !this._removedParts.Contains(partAndExport.Item1));
 
-                var addedExports = new List<Tuple<ComposablePartDefinition, ExportDefinition>>();
+                var addedExports = new List<Tuple2<ComposablePartDefinition, ExportDefinition>>();
                 foreach (var part in this._addedParts)
                 {
                     foreach (var export in part.ExportDefinitions)
                     {
                         if (definition.IsConstraintSatisfiedBy(export))
                         {
-                            addedExports.Add(new Tuple<ComposablePartDefinition, ExportDefinition>(part, export));
+                            addedExports.Add(new Tuple2<ComposablePartDefinition, ExportDefinition>(part, export));
                         }
                     }
                 }

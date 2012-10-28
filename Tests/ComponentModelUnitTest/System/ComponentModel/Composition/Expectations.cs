@@ -317,11 +317,11 @@ namespace System.ComponentModel.Composition
             return (TEnum)(object)(intRight + right);
         }
 
-        private static Tuple<TEnum, TEnum> GetEnumBounds<TEnum>() where TEnum : struct
+        private static Tuple2<TEnum, TEnum> GetEnumBounds<TEnum>() where TEnum : struct
         {
             var values = TestServices.GetEnumValues<TEnum>();
 
-            return new Tuple<TEnum, TEnum>(values.First(), values.Last());
+            return new Tuple2<TEnum, TEnum>(values.First(), values.Last());
         }
 
         private static IEnumerable<IEnumerable<T>> GetEmptyCollections<T>()

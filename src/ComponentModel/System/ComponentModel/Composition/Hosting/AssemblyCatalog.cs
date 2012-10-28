@@ -146,7 +146,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///     <see cref="ExportDefinition"/> objects to return.
         /// </param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple{T1, T2}"/> containing the 
+        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple2{T1, T2}"/> containing the 
         ///     <see cref="ExportDefinition"/> objects and their associated 
         ///     <see cref="ComposablePartDefinition"/> for objects that match the constraint defined 
         ///     by <paramref name="definition"/>.
@@ -164,7 +164,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///         <paramref name="definition"/>, return an empty <see cref="IEnumerable{T}"/>.
         ///     </note>
         /// </remarks>
-        public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             return this.InnerCatalog.GetExports(definition);
         }

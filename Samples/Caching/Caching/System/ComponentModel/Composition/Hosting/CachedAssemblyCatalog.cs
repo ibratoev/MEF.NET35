@@ -122,7 +122,7 @@ namespace System.ComponentModel.Composition.Hosting
             }
         }
 
-        public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             this.ThrowIfDisposed();
 

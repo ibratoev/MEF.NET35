@@ -190,7 +190,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///     <see cref="ExportDefinition"/> objects to return.
         /// </param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple{T1, T2}"/> containing the 
+        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple2{T1, T2}"/> containing the 
         ///     <see cref="ExportDefinition"/> objects and their associated 
         ///     <see cref="ComposablePartDefinition"/> for objects that match the constraint defined 
         ///     by <paramref name="definition"/>.
@@ -208,7 +208,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///         <paramref name="definition"/>, return an empty <see cref="IEnumerable{T}"/>.
         ///     </note>
         /// </remarks>
-        public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             this.ThrowIfDisposed();
 
@@ -217,17 +217,17 @@ namespace System.ComponentModel.Composition.Hosting
             IEnumerable<ComposablePartDefinition> candidateParts = this.GetCandidateParts(definition);
             if (candidateParts == null)
             {
-                return Enumerable.Empty<Tuple<ComposablePartDefinition, ExportDefinition>>();
+                return Enumerable.Empty<Tuple2<ComposablePartDefinition, ExportDefinition>>();
             }
 
-            var exports = new List<Tuple<ComposablePartDefinition, ExportDefinition>>();
+            var exports = new List<Tuple2<ComposablePartDefinition, ExportDefinition>>();
             foreach (var part in candidateParts)
             {
                 foreach (var export in part.ExportDefinitions)
                 {
                     if (definition.IsConstraintSatisfiedBy(export))
                     {
-                        exports.Add(new Tuple<ComposablePartDefinition, ExportDefinition>(part, export));
+                        exports.Add(new Tuple2<ComposablePartDefinition, ExportDefinition>(part, export));
                     }
                 }
             }

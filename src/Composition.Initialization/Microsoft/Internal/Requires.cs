@@ -32,7 +32,7 @@ namespace Microsoft.Internal
 
             if (value.Length == 0)
             {
-                throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, Strings.ArgumentException_EmptyString, parameterName), parameterName);
+				throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, System.ComponentModel.Composition.Initialization.Strings.ArgumentException_EmptyString, parameterName), parameterName);
             }
         }
     }

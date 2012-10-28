@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CodeAnalysisRuleSet>Migrated rules for UnitTestFramework.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
@@ -8,6 +8,13 @@
     <OutputPath>..\..\bin</OutputPath>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <NoWarn>1570;1572;1573;1591;1699</NoWarn>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -53,7 +60,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
   </ItemGroup>
   <ItemGroup Condition=" '$(IsSilverlight)' == 'true' ">
-    <ProjectReference Include="$(CMInitProjectPath)\Composition.Initialization.csproj">
+    <ProjectReference Include="..\..\src\Composition.Initialization\Composition.Initialization.csproj">
       <Project>{A497DC28-0A3B-4BAD-B964-B8B436686D98}</Project>
       <Name>Composition.Initialization</Name>
     </ProjectReference>

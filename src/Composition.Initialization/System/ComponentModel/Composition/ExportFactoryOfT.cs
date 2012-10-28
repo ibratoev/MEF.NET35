@@ -9,9 +9,9 @@ namespace System.ComponentModel.Composition
 {
     public class ExportFactory<T>
     {
-        private Func<Tuple<T, Action>> _exportLifetimeContextCreator;
+        private Func<Tuple2<T, Action>> _exportLifetimeContextCreator;
 
-        public ExportFactory(Func<Tuple<T, Action>> exportLifetimeContextCreator)
+        public ExportFactory(Func<Tuple2<T, Action>> exportLifetimeContextCreator)
         {
             if (exportLifetimeContextCreator == null)
             {
@@ -23,7 +23,7 @@ namespace System.ComponentModel.Composition
 
         public ExportLifetimeContext<T> CreateExport()
         {
-            Tuple<T, Action> untypedLifetimeContext = this._exportLifetimeContextCreator.Invoke();
+            Tuple2<T, Action> untypedLifetimeContext = this._exportLifetimeContextCreator.Invoke();
             return new ExportLifetimeContext<T>(untypedLifetimeContext.Item1, untypedLifetimeContext.Item2);
         }
     }

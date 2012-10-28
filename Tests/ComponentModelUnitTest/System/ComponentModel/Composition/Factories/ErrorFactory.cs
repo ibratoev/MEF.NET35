@@ -57,7 +57,7 @@ namespace System.ComponentModel.Composition.Factories
 
         private static Exception CreateFromDslCore(string format)
         {
-            List<Tuple<string, string>> identifiers = new List<Tuple<string,string>>();
+            List<Tuple2<string, string>> identifiers = new List<Tuple2<string,string>>();
 
             StringBuilder token = new StringBuilder();
             StringReader reader = new StringReader(format);
@@ -87,7 +87,7 @@ namespace System.ComponentModel.Composition.Factories
             return CreateFromList(identifiers);
         }
 
-        private static Exception CreateFromList(List<Tuple<string, string>> identifiers)
+        private static Exception CreateFromList(List<Tuple2<string, string>> identifiers)
         {
             List<CompositionError> errors = new List<CompositionError>();
             Exception exception = null;
@@ -120,17 +120,17 @@ namespace System.ComponentModel.Composition.Factories
             return new CompositionException("", exception, errors);
         }
 
-        private static void AddIdentifier(List<Tuple<string, string>> identifiers, StringBuilder identifier)
+        private static void AddIdentifier(List<Tuple2<string, string>> identifiers, StringBuilder identifier)
         {
             AddIdentifier(identifiers, identifier, (string)null);
         }
 
-        private static void AddIdentifier(List<Tuple<string, string>> identifiers, StringBuilder identifier, string dsl)
+        private static void AddIdentifier(List<Tuple2<string, string>> identifiers, StringBuilder identifier, string dsl)
         {
             if (identifier.Length == 0)
                 return;
 
-            identifiers.Add(new Tuple<string, string>(identifier.ToString(), dsl));
+            identifiers.Add(new Tuple2<string, string>(identifier.ToString(), dsl));
 
             identifier.Length = 0;
         }

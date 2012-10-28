@@ -59,7 +59,7 @@ namespace System.ComponentModel.Composition.Primitives
         ///     <see cref="ExportDefinition"/> objects to return.
         /// </param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple{T1, T2}"/> containing the 
+        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple2{T1, T2}"/> containing the 
         ///     <see cref="ExportDefinition"/> objects and their associated 
         ///     <see cref="ComposablePartDefinition"/> for objects that match the constraint defined 
         ///     by <paramref name="definition"/>.
@@ -78,20 +78,20 @@ namespace System.ComponentModel.Composition.Primitives
         ///     </note>
         /// </remarks>
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
-        public virtual IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public virtual IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             this.ThrowIfDisposed();
 
             Requires.NotNull(definition, "definition");
 
-            var exports = new List<Tuple<ComposablePartDefinition, ExportDefinition>>();
+            var exports = new List<Tuple2<ComposablePartDefinition, ExportDefinition>>();
             foreach (var part in this.Parts)
             {
                 foreach (var export in part.ExportDefinitions)
                 {
                     if (definition.IsConstraintSatisfiedBy(export))
                     {
-                        exports.Add(new Tuple<ComposablePartDefinition, ExportDefinition>(part, export));
+                        exports.Add(new Tuple2<ComposablePartDefinition, ExportDefinition>(part, export));
                     }
                 }
             }

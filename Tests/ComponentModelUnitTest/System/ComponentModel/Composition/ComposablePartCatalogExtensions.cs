@@ -16,7 +16,7 @@ namespace System.ComponentModel.Composition
 {
     internal static class ComposablePartCatalogExtensions
     {
-        public static IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(this ComposablePartCatalog catalog, Expression<Func<ExportDefinition, bool>> constraint)
+        public static IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(this ComposablePartCatalog catalog, Expression<Func<ExportDefinition, bool>> constraint)
         {
             var import = ImportDefinitionFactory.Create(constraint);
             return catalog.GetExports(import);

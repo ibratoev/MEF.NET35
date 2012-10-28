@@ -92,7 +92,7 @@ namespace System.ComponentModel.Composition.ReflectionModel
                     ((arguments.Length == 1) || (arguments.Length == 2)))
                 {
                     // Func<Tuple<T, Action>>
-                    Type exportLifetimeContextCreatorType = typeof(Func<>).MakeGenericType(typeof(Tuple<,>).MakeGenericType(arguments[0], typeof(Action)));
+                    Type exportLifetimeContextCreatorType = typeof(Func<>).MakeGenericType(typeof(Tuple2<,>).MakeGenericType(arguments[0], typeof(Action)));
                     ConstructorInfo constructor = null;
 
                     if (arguments.Length == 1)

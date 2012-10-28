@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -16,8 +22,21 @@
     <OutputPath>..\..\..\bin\MEFStudio</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="..\Binaries\GraphLibrary.dll" />
-    <Reference Include="..\Binaries\Loader.dll" />
+    <Reference Include="CodeEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\CodeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphLibrary, Version=1.0.1389.18615, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\GraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Loader, Version=1.0.3372.32446, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />

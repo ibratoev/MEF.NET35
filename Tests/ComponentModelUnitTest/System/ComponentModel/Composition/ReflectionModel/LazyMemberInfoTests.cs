@@ -182,10 +182,10 @@ namespace System.ComponentModel.Composition.ReflectionModel
         }
 
 
-        private static IEnumerable<Tuple<MemberInfo, Tuple<MemberTypes, MemberInfo[]>>> GetMembersAndAccessors(Type type)
+        private static IEnumerable<Tuple2<MemberInfo, Tuple2<MemberTypes, MemberInfo[]>>> GetMembersAndAccessors(Type type)
         {
-            yield return new Tuple<MemberInfo, Tuple<MemberTypes, MemberInfo[]>>(
-                type, new Tuple<MemberTypes, MemberInfo[]>(type.MemberType, new MemberInfo[] { type }));
+            yield return new Tuple2<MemberInfo, Tuple2<MemberTypes, MemberInfo[]>>(
+                type, new Tuple2<MemberTypes, MemberInfo[]>(type.MemberType, new MemberInfo[] { type }));
 
             foreach (MemberInfo member in type.GetMembers())
             {
@@ -205,8 +205,8 @@ namespace System.ComponentModel.Composition.ReflectionModel
                     accessors = new MemberInfo[] { member };
                 }
 
-                yield return new Tuple<MemberInfo, Tuple<MemberTypes, MemberInfo[]>>(
-                    member, new Tuple<MemberTypes, MemberInfo[]>(member.MemberType, accessors));
+                yield return new Tuple2<MemberInfo, Tuple2<MemberTypes, MemberInfo[]>>(
+                    member, new Tuple2<MemberTypes, MemberInfo[]>(member.MemberType, accessors));
             }
         }
 

@@ -102,7 +102,7 @@ namespace System.ComponentModel.Composition.Caching
                 return partDefinition;
             }
 
-            public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+            public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
             {
                 Requires.NotNull(definition, "definition");
                 ContractBasedImportDefinition contractBasedDefinition = definition as ContractBasedImportDefinition;
@@ -117,23 +117,23 @@ namespace System.ComponentModel.Composition.Caching
             }
 
 
-            private IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ContractBasedImportDefinition definition)
+            private IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ContractBasedImportDefinition definition)
             {
                 ComposablePartDefinition[] matchingParts = this.GetPartsWithContract(definition.ContractName);
                 if (matchingParts == null)
                 {
-                    return Enumerable.Empty<Tuple<ComposablePartDefinition, ExportDefinition>>();
+                    return Enumerable.Empty<Tuple2<ComposablePartDefinition, ExportDefinition>>();
                 }
                 else
                 {
-                    var exports = new List<Tuple<ComposablePartDefinition, ExportDefinition>>();
+                    var exports = new List<Tuple2<ComposablePartDefinition, ExportDefinition>>();
                     foreach (var part in matchingParts)
                     {
                         foreach (var export in part.ExportDefinitions)
                         {
                             if (definition.IsConstraintSatisfiedBy(export))
                             {
-                                exports.Add(new Tuple<ComposablePartDefinition, ExportDefinition>(part, export));
+                                exports.Add(new Tuple2<ComposablePartDefinition, ExportDefinition>(part, export));
                             }
                         }
                     }

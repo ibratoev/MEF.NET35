@@ -240,7 +240,7 @@ namespace System.ComponentModel.Composition.Hosting
         ///     <see cref="ExportDefinition"/> objects to return.
         /// </param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple{T1, T2}"/> containing the 
+        ///     An <see cref="IEnumerable{T}"/> of <see cref="Tuple2{T1, T2}"/> containing the 
         ///     <see cref="ExportDefinition"/> objects and their associated 
         ///     <see cref="ComposablePartDefinition"/> for objects that match the constraint defined 
         ///     by <paramref name="definition"/>.
@@ -251,7 +251,7 @@ namespace System.ComponentModel.Composition.Hosting
         /// <exception cref="ObjectDisposedException">
         ///     The <see cref="DirectoryCatalog"/> has been disposed of.
         /// </exception>
-        public override IEnumerable<Tuple<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
+        public override IEnumerable<Tuple2<ComposablePartDefinition, ExportDefinition>> GetExports(ImportDefinition definition)
         {
             this.ThrowIfDisposed();
 
@@ -308,8 +308,8 @@ namespace System.ComponentModel.Composition.Hosting
             this.ThrowIfDisposed();
             Assumes.NotNull(this._loadedFiles);
 
-            List<Tuple<string, AssemblyCatalog>> catalogsToAdd;
-            List<Tuple<string, AssemblyCatalog>> catalogsToRemove;
+            List<Tuple2<string, AssemblyCatalog>> catalogsToAdd;
+            List<Tuple2<string, AssemblyCatalog>> catalogsToRemove;
             ComposablePartDefinition[] addedDefinitions;
             ComposablePartDefinition[] removedDefinitions;
             object changeReferenceObject;
@@ -427,11 +427,11 @@ namespace System.ComponentModel.Composition.Hosting
         }
 
         private void DiffChanges(string[] beforeFiles, string[] afterFiles,
-            out List<Tuple<string, AssemblyCatalog>> catalogsToAdd,
-            out List<Tuple<string, AssemblyCatalog>> catalogsToRemove)
+            out List<Tuple2<string, AssemblyCatalog>> catalogsToAdd,
+            out List<Tuple2<string, AssemblyCatalog>> catalogsToRemove)
         {
-            catalogsToAdd = new List<Tuple<string, AssemblyCatalog>>();
-            catalogsToRemove = new List<Tuple<string, AssemblyCatalog>>();
+            catalogsToAdd = new List<Tuple2<string, AssemblyCatalog>>();
+            catalogsToRemove = new List<Tuple2<string, AssemblyCatalog>>();
 
             IEnumerable<string> filesToAdd = afterFiles.Except(beforeFiles);
             foreach (string file in filesToAdd)
@@ -440,7 +440,7 @@ namespace System.ComponentModel.Composition.Hosting
 
                 if (catalog != null)
                 {
-                    catalogsToAdd.Add(new Tuple<string, AssemblyCatalog>(file, catalog));
+                    catalogsToAdd.Add(new Tuple2<string, AssemblyCatalog>(file, catalog));
                 }
             }
 
@@ -452,7 +452,7 @@ namespace System.ComponentModel.Composition.Hosting
                     AssemblyCatalog catalog;
                     if (this._assemblyCatalogs.TryGetValue(file, out catalog))
                     {
-                        catalogsToRemove.Add(new Tuple<string, AssemblyCatalog>(file, catalog));
+                        catalogsToRemove.Add(new Tuple2<string, AssemblyCatalog>(file, catalog));
                     }
                 }
             }

@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CodeAnalysisRuleSet>Migrated rules for Composition.Initialization.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
   </PropertyGroup>
-    <PropertyGroup>
+  <PropertyGroup>
     <OutputPath>..\..\bin</OutputPath>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <NoWarn>1570;1572;1573;1591;1699</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ProjectClrTypes>FULLCLR;SILVERLIGHT</ProjectClrTypes>
-    <ProductVersion>10.0.20805</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <OutputType>Library</OutputType>
-    <AssemblyName>System.ComponentModel.Composition.Initialization</AssemblyName>
-    <RootNamespace>System.ComponentModel.Composition.Initialization</RootNamespace>
-    <DocumentationFile>$(OutputPath)\System.ComponentModel.Composition.Initialization.xml</DocumentationFile>
-    <ProjectGuid>{A497DC28-0A3B-4BAD-B964-B8B436686D98}</ProjectGuid>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,9 +27,19 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectClrTypes>FULLCLR;SILVERLIGHT</ProjectClrTypes>
+    <ProductVersion>10.0.20805</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <AssemblyName>System.ComponentModel.Composition.Initialization</AssemblyName>
+    <RootNamespace>System.ComponentModel.Composition.Initialization</RootNamespace>
+    <DocumentationFile>$(OutputPath)\System.ComponentModel.Composition.Initialization.xml</DocumentationFile>
+    <ProjectGuid>{A497DC28-0A3B-4BAD-B964-B8B436686D98}</ProjectGuid>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
