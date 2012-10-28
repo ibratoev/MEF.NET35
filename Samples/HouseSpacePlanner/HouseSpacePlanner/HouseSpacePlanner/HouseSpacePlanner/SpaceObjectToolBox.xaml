@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="HouseSpacePlanner.SpaceObjectToolBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+  <Grid x:Name="LayoutRoot" Background="White" >
+    <Border BorderBrush="Gray" BorderThickness="1">
+      <ScrollViewer x:Name="scrollViewer" Height="500" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer.Content>
+          <ItemsControl>
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel/>
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Height="80" Width="70" Margin="3" >
+                  <StackPanel>
+                    <TextBlock IsHitTestVisible="False"  Text="{Binding Name}" TextAlignment="Center" TextWrapping="NoWrap"/>
+                    <Border CornerRadius="20" Background="White" BorderBrush="Gainsboro" BorderThickness="1">
+                      <ContentControl IsHitTestVisible="False" Margin="5" Content="{Binding SpaceObject}"
+                                      Width="40" Height="40" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+                    </Border>
+                  </StackPanel>
+                </Button>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </ScrollViewer.Content>
+      </ScrollViewer>
+    </Border>
+  </Grid>
+</UserControl>

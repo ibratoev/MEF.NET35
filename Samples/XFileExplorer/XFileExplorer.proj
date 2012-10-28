@@ -1,0 +1,11 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Import the settings-->
+  <Import Project="..\SampleApplications.settings.targets" />
+  <!--Import the projects-->
+  <ItemGroup>
+    <ProjectFile Include="*\*.proj"   />
+    <ProjectFile Include="*\*.csproj" />
+  </ItemGroup>
+  <!--Import the targets-->
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\tools\Microsoft.DevDiv.Traversal.targets" />
+</Project>

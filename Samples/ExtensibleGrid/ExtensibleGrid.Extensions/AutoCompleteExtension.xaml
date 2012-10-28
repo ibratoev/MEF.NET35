@@ -1,0 +1,32 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ExtensibleGrid.Shared;assembly=ExtensibleGrid.Shared"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input">
+
+
+    <local:CustomerCollection x:Name="SampleCollection"/>
+
+    <DataTemplate x:Name="myCellTemplate">
+        <TextBlock Text="{Binding FirstName}" Margin="4" />
+    </DataTemplate>
+
+    <DataTemplate x:Name="myCellEditingTemplateFirstName">
+        <Grid>
+            <input:AutoCompleteBox x:Name="acb" VerticalAlignment="Top" Background="Beige" 
+                                    HorizontalAlignment="Left"
+                                    MinimumPrefixLength="0"
+                                    MinimumPopulateDelay="0"
+                                    Width="140"
+                                    IsTextCompletionEnabled="True"
+                                    IsTabStop="True"
+                                    Text="{Binding FirstName, Mode=TwoWay}"
+                                    ItemsSource="{StaticResource SampleCollection}">
+
+
+
+            </input:AutoCompleteBox>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

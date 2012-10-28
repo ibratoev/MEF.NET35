@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="HouseSpacePlanner.PlanningPane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    FontFamily="Trebuchet MS" FontSize="11">
+	<UserControl.Resources>
+		<Style x:Key="RemoveButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="#FF1F3B53"/>
+			<Setter Property="Foreground" Value="#FF000000"/>
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFA3AEB9" Offset="0"/>
+						<GradientStop Color="#FF8399A9" Offset="0.375"/>
+						<GradientStop Color="#FF718597" Offset="0.375"/>
+						<GradientStop Color="#FF617584" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+												<EasingColorKeyFrame KeyTime="0" Value="#FFCECECE"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+												<SplineColorKeyFrame KeyTime="0" Value="#FF6DBDD1"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement">
+												<SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused">
+										<Storyboard>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement">
+												<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Unfocused"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FFE7E7E7"/>
+							<ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							<Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3"/>
+							<Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+  <Grid Background="White">
+ 
+  	<Grid Width="600" Height="450">
+  		<StackPanel x:Name="HorizontalLines" Grid.ColumnSpan="1" Grid.RowSpan="1">
+  			<Path Stretch="Fill" Stroke="Gainsboro" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeStartLineCap="Flat" StrokeThickness="1" Height="610" Data="M0.5,0.5 L599.5,0.5 M0.5,21.5 L599.5,21.5 M0.5,42.5 L599.5,42.5 M0.5,63.5 L599.5,63.5 M0.5,84.5 L599.5,84.5 M0.5,105.5 L599.5,105.5 M0.5,126.5 L599.5,126.5 M0.5,147.5 L599.5,147.5 M0.5,168.5 L599.5,168.5 M0.5,189.5 L599.5,189.5 M0.5,210.5 L599.5,210.5 M0.5,231.5 L599.5,231.5 M0.5,252.5 L599.5,252.5 M0.5,273.5 L599.5,273.5 M0.5,294.5 L599.5,294.5 M0.5,315.5 L599.5,315.5 M0.5,336.5 L599.5,336.5 M0.5,357.5 L599.5,357.5 M0.5,378.5 L599.5,378.5 M0.5,399.5 L599.5,399.5 M0.5,420.5 L599.5,420.5 M0.5,441.5 L599.5,441.5 M0.5,462.5 L599.5,462.5 M0.5,483.5 L599.5,483.5 M0.5,504.5 L599.5,504.5 M0.5,525.5 L599.5,525.5 M0.5,546.5 L599.5,546.5 M0.5,567.5 L599.5,567.5 M0.5,588.5 L599.5,588.5 M0.5,609.5 L599.5,609.5" Margin="0,20,0,0" UseLayoutRounding="False"/>
+  		</StackPanel>
+  		<StackPanel x:Name="VerticalLines" Grid.ColumnSpan="1" Grid.RowSpan="1" Orientation="Horizontal">
+  			<Path Data="M0.25,0.25 L0.75,0.25 L0.75,449.75 L0.25,449.75 z M21.250008,0.25000995 L21.750008,0.25000995 L21.750008,449.75 L21.250008,449.75 z M42.250008,0.25000995 L42.750008,0.25000995 L42.750008,449.75 L42.250008,449.75 z M63.250008,0.25000995 L63.750008,0.25000995 L63.750008,449.75 L63.250008,449.75 z M84.250008,0.25000995 L84.750008,0.25000995 L84.750008,449.75 L84.250008,449.75 z M105.25001,0.25000995 L105.75001,0.25000995 L105.75001,449.75 L105.25001,449.75 z M126.25001,0.25000995 L126.75001,0.25000995 L126.75001,449.75 L126.25001,449.75 z M147.25002,0.25000995 L147.75002,0.25000995 L147.75002,449.75 L147.25002,449.75 z M168.25002,0.25000995 L168.75002,0.25000995 L168.75002,449.75 L168.25002,449.75 z M189.25002,0.25000995 L189.75002,0.25000995 L189.75002,449.75 L189.25002,449.75 z M210.25002,0.25000995 L210.75002,0.25000995 L210.75002,449.75 L210.25002,449.75 z M231.25002,0.25000995 L231.75002,0.25000995 L231.75002,449.75 L231.25002,449.75 z M252.25002,0.25000995 L252.75002,0.25000995 L252.75002,449.75 L252.25002,449.75 z M273.25,0.25000995 L273.75,0.25000995 L273.75,449.75 L273.25,449.75 z M294.25,0.25000995 L294.75,0.25000995 L294.75,449.75 L294.25,449.75 z M315.25003,0.25000995 L315.75003,0.25000995 L315.75003,449.75 L315.25003,449.75 z M336.25003,0.25000995 L336.75003,0.25000995 L336.75003,449.75 L336.25003,449.75 z M357.25003,0.25000995 L357.75003,0.25000995 L357.75003,449.75 L357.25003,449.75 z M378.25003,0.25000995 L378.75003,0.25000995 L378.75003,449.75 L378.25003,449.75 z M399.25003,0.25000995 L399.75003,0.25000995 L399.75003,449.75 L399.25003,449.75 z M420.25003,0.25000995 L420.75003,0.25000995 L420.75003,449.75 L420.25003,449.75 z M441.25003,0.25000995 L441.75003,0.25000995 L441.75003,449.75 L441.25003,449.75 z M462.25003,0.25000995 L462.75003,0.25000995 L462.75003,449.75 L462.25003,449.75 z M483.25003,0.25000995 L483.75003,0.25000995 L483.75003,449.75 L483.25003,449.75 z M504.25003,0.25000995 L504.75003,0.25000995 L504.75003,449.75 L504.25003,449.75 z M525.25,0.25000995 L525.75,0.25000995 L525.75,449.75 L525.25,449.75 z M546.25,0.25000995 L546.75,0.25000995 L546.75,449.75 L546.25,449.75 z M567.25,0.25000995 L567.75,0.25000995 L567.75,449.75 L567.25,449.75 z M588.25,0.25000995 L588.75,0.25000995 L588.75,449.75 L588.25,449.75 z M609.25,0.25000995 L609.75,0.25000995 L609.75,449.75 L609.25,449.75 z M630.25,0.25000995 L630.75,0.25000995 L630.75,449.75 L630.25,449.75 z M651.25,0.25000995 L651.75,0.25000995 L651.75,449.75 L651.25,449.75 z M672.25,0.25000995 L672.75,0.25000995 L672.75,449.75 L672.25,449.75 z M693.25,0.25000995 L693.75,0.25000995 L693.75,449.75 L693.25,449.75 z" Margin="20,0,0,0" StrokeStartLineCap="Flat" Stretch="Fill" StrokeEndLineCap="Flat" Stroke="Gainsboro" StrokeThickness="0.5" StrokeMiterLimit="4" StrokeLineJoin="Miter" UseLayoutRounding="False" Width="694"/>
+  		</StackPanel>
+  		<Border BorderBrush="Gray" BorderThickness="1" Margin="0" CornerRadius="3" >
+  			<Canvas x:Name="planningPaneCanvas" Width="588" Height="438" Margin="3,3,7,7"/>
+  		</Border>    
+  	</Grid>
+  	<Border x:Name="contextPanel" Margin="5,5" BorderThickness="1" Padding="5"  VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed" >
+  		<Grid>
+  			<Grid.RowDefinitions>
+  				<RowDefinition/>
+  				<RowDefinition/>
+  				<RowDefinition/>
+  			</Grid.RowDefinitions>
+  			<Grid.ColumnDefinitions>
+  				<ColumnDefinition/>
+  				<ColumnDefinition/>
+  			</Grid.ColumnDefinitions>
+  			<Border BorderBrush="#FF626262" BorderThickness="1" Background="White" Grid.ColumnSpan="2" Grid.RowSpan="3">
+  				<Border.Effect>
+  					<DropShadowEffect BlurRadius="9" Color="#FFA5A5A5" ShadowDepth="2"/>
+  				</Border.Effect>
+  			</Border>
+  			<TextBlock Text="Height:" Margin="6" FontFamily="Fonts/Fonts.zip#Century Gothic"/>
+  			<TextBlock  Grid.Row="1" Text="Width:" Margin="6" FontFamily="Fonts/Fonts.zip#Century Gothic"/>
+  			<TextBlock x:Name="selectedShapeHeight" Grid.Column="1" Margin="6" FontFamily="Fonts/Fonts.zip#Century Gothic" />
+  			<TextBlock x:Name="selectedShapeWidth"  Grid.Column="1" Grid.Row="1" Margin="6" FontFamily="Fonts/Fonts.zip#Century Gothic" />
+  			<Button  Grid.ColumnSpan="2" Grid.Row="2" Content="Remove..." Click="ButtonRemoveClicked" Width="100" Height="24" FontFamily="Fonts/Fonts.zip#Century Gothic" Margin="6" Style="{StaticResource RemoveButtonStyle}"/>
+  		</Grid>
+  	</Border>   
+  </Grid> 
+</UserControl>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Xaml_Box" xml:space="preserve">
+    <value>&lt;Canvas Width="50" Height="50"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Rectangle Width="50" Height="50"  Fill="Brown" Stroke="#FF000000"  /&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+  <data name="Xaml_KindBed" xml:space="preserve">
+    <value>&lt;Canvas Width="54.4" Height="72"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Rectangle Width="54.4" Height="72" Stroke="#FF000000" Fill="Brown" Canvas.Left="0.2" /&gt;
+    &lt;Ellipse Width="23.2" Height="13.6"  Stroke="#FF000000" Fill="#FFFFFFFF" Canvas.Left="4.2" Canvas.Top="1.8" /&gt;
+    &lt;Ellipse Width="23.2" Height="13.6"  Stroke="#FF000000" Fill="#FFFFFFFF" Canvas.Top="1.6" Canvas.Left="28.4"/&gt;
+    &lt;Path HorizontalAlignment="Left" VerticalAlignment="Top" Width="54.4" Height="1" Fill="#FFFFFFFF" Stretch="Fill"
+      Stroke="#FF000000" Data="M0.20000076,22.899997 L56.200001,22.899997" Canvas.Top="22.9" Canvas.Left="0.2"/&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+  <data name="Xaml_QueenBed" xml:space="preserve">
+    <value>&lt;Canvas Width="54.4" Height="72"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Rectangle Width="54.4" Height="72" Stroke="#FF000000" Fill="Brown" Canvas.Left="0.2" /&gt;
+    &lt;Ellipse Width="23.2" Height="13.6"  Stroke="#FF000000" Fill="#FFFFFFFF" Canvas.Left="4.2" Canvas.Top="1.8" /&gt;
+    &lt;Ellipse Width="23.2" Height="13.6"  Stroke="#FF000000" Fill="#FFFFFFFF" Canvas.Top="1.6" Canvas.Left="28.4"/&gt;
+    &lt;Path HorizontalAlignment="Left" VerticalAlignment="Top" Width="54.4" Height="1" Fill="#FFFFFFFF" Stretch="Fill"
+      Stroke="#FF000000" Data="M0.20000076,22.899997 L56.200001,22.899997" Canvas.Top="22.9" Canvas.Left="0.2"/&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+  <data name="Xaml_RoundDesk" xml:space="preserve">
+    <value>&lt;Canvas Width="85.8" Height="45.6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Path Width="85.8" Height="45.6" Fill="Brown" Stretch="Fill" Stroke="#FF000000" Data="M38.099998,50.900002 L46.099998,43.699999 57.299997,37.299997 70.099997,35.699996 93.299995,36.499998 106.09999,38.899998 122.89999,47.700001 122.9,80.300008 111.69999,73.100008 100.5,66.700006 88.499996,63.500005 77.299996,62.700004 64.499997,62.700004 53.299998,67.500006 46.099998,71.500007 38.099999,80.300011 z"/&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+  <data name="Xaml_RoundTable" xml:space="preserve">
+    <value>&lt;Canvas Width="50" Height="50"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Ellipse Width="50" Height="50"  Fill="Brown" Stroke="#FF000000"  /&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+  <data name="Xaml_TV" xml:space="preserve">
+    <value>&lt;Canvas Width="85.8" Height="45.6"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;Path Fill="Brown" Stretch="Fill" Stroke="#FF000000" Data="M35.86649,35.396606 L45.166665,35.218702 56.980742,35.396606 70.012294,35.254313 93.228908,35.2187 106.42448,35.140352 122.03217,35.2187 122.14038,45.112012 106.64583,49.727468 91.764336,58.168493 89.323382,66.70795 75.898135,66.885852 63.693365,66.707944 61.761681,58.990421 48.499501,49.71146 35.744442,45.715111 z"/&gt;
+  &lt;/Canvas&gt;</value>
+  </data>
+</root>

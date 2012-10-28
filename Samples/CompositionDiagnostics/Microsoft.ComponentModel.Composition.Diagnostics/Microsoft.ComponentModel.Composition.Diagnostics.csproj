@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup><TargetFrameworkVersion>v3.5</TargetFrameworkVersion></PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20820</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A44C587-989D-4785-9311-8BF8069BB775}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>..\..\..\bin\CompositionDiagnostics</OutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.ComponentModel.Composition.Diagnostics</RootNamespace>
+    <AssemblyName>Microsoft.ComponentModel.Composition.Diagnostics</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\ComponentModel\ComponentModel.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>ComponentModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositionContractInfo.cs" />
+    <Compile Include="CompositionElementTextFormatter.cs" />
+    <Compile Include="CompositionInfo.cs" />
+    <Compile Include="CompositionInfoTextFormatter.cs" />
+    <Compile Include="ContractInfo.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="ImportDefinitionInfo.cs" />
+    <Compile Include="PartDefinitionInfo.cs" />
+    <Compile Include="PartDefinitionInfoTextFormatter.cs" />
+    <Compile Include="UnsuitableExportDefinitionInfo.cs" />
+    <Compile Include="UnsuitableExportDefinitionIssue.cs" />
+    <Compile Include="UnsuitableExportDefinitionReason.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
